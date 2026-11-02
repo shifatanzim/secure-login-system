@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Secure Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🛡️ Secure Dashboard</h1>
+            <p class="subtitle">Authentication Successful</p>
+
+            <div class="success">
+                Welcome, {{ username }}!
+            </div>
+
+            <p class="security-text">
+                Your account is protected with password hashing
+                and session-based authentication.
+            </p>
+
+            <a class="logout" href="/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

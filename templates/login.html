@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Secure Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔐 Welcome Back</h1>
+            <p class="subtitle">Login to your secure account</p>
+
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <div class="message">{{ message }}</div>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST">
+                <label>Username</label>
+                <input type="text" name="username"
+                       placeholder="Enter username" required>
+
+                <label>Password</label>
+
+                <div class="password-wrapper">
+                    <input type="password" id="password"
+                           name="password"
+                           placeholder="Enter password" required>
+
+                    <button type="button" id="eyeButton"
+                            onclick="togglePassword()">SHOW</button>
+                </div>
+
+                <button type="submit">Login Securely</button>
+            </form>
+
+            <p class="bottom-text">
+                Don't have an account?
+                <a href="/register">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const password = document.getElementById("password");
+            const eyeButton = document.getElementById("eyeButton");
+
+            if (password.type === "password") {
+                password.type = "text";
+                eyeButton.textContent = "HIDE";
+            } else {
+                password.type = "password";
+                eyeButton.textContent = "SHOW";
+            }
+        }
+    </script>
+</body>
+</html>

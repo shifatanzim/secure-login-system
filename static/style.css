@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background:
+        radial-gradient(circle at 15% 20%, #123b85 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #32156b 0%, transparent 35%),
+        linear-gradient(135deg, #020617, #0b1128, #030712);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 49px,
+        rgba(59,130,246,0.05) 50px
+    );
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 460px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(18px);
+    padding: 40px 35px;
+    border-radius: 22px;
+    border: 1px solid rgba(96,165,250,0.45);
+    box-shadow:
+        0 0 35px rgba(37,99,235,0.18),
+        inset 0 0 25px rgba(59,130,246,0.06);
+    animation: appear 0.7s ease;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin: 18px 0 9px;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: rgba(30,41,59,0.8);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 15px rgba(59,130,246,0.25);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 28px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(59,130,246,0.4);
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+a {
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #a78bfa;
+}
+
+.message {
+    background: rgba(127,29,29,0.7);
+    color: #fecaca;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.success {
+    background: rgba(6,78,59,0.7);
+    color: #a7f3d0;
+    padding: 16px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 22px 0;
+    border: 1px solid #059669;
+}
+
+.security-text {
+    color: #94a3b8;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.logout {
+    display: block;
+    text-align: center;
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.password-box input {
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin: 0;
+    padding: 5px 10px;
+    background: transparent;
+    box-shadow: none;
+    font-size: 18px;
+}
+
+.toggle-password:hover {
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(-50%);
+}
+.password-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-box input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto !important;
+    margin: 0 !important;
+    padding: 5px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.toggle-password:hover {
+    transform: translateY(-50%);
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: 15px 70px 15px 15px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: rgba(30,41,59,0.8);
+    color: white;
+    font-size: 15px;
+}
+
+.password-wrapper #eyeButton {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin: 0;
+    padding: 6px;
+    background: transparent;
+    color: #60a5fa;
+    border: none;
+    box-shadow: none;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.password-wrapper #eyeButton:hover {
+    color: #a78bfa;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
+
